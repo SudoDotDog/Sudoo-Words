@@ -30,4 +30,22 @@ export class Words {
 
         this._parent = parent;
     }
+
+    public addAdjectives(adjectives: string[]): this {
+
+        this._adjectives.push(...adjectives);
+        return this;
+    }
+
+    public addNouns(nouns: string[]): this {
+
+        this._nouns.push(...nouns);
+        return this;
+    }
+
+    public addVerbs(verbs: string[]): this {
+
+        this._verbs.push(...verbs);
+        return this;
+    }
 }
