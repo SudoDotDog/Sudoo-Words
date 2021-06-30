@@ -4,6 +4,8 @@
  * @description Words
  */
 
+import { WordsSet } from "./set";
+
 export class Words {
 
     public static create(): Words {
@@ -74,5 +76,20 @@ export class Words {
         }
 
         return [...this._verbs];
+    }
+
+    public getAdjectiveSet(): WordsSet {
+
+        return WordsSet.of(this.getAdjectives());
+    }
+
+    public getNounSet(): WordsSet {
+
+        return WordsSet.of(this.getNouns());
+    }
+
+    public getVerbSet(): WordsSet {
+
+        return WordsSet.of(this.getVerbs());
     }
 }

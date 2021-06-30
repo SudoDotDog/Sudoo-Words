@@ -30,4 +30,21 @@ export class WordsSet {
         const index: number = getRandomElementIndex(this.length);
         return this._words[index];
     }
+
+    public getRemainderBasedWord(target: number): string {
+
+        const remainder: number = target % this.length;
+        return this._words[remainder];
+    }
+
+    public getStringRemainderBasedWord(target: string): string {
+
+        let totalCharCode: number = 0;
+        for (let i = 0; i < target.length; i++) {
+            totalCharCode += target.charCodeAt(i);
+        }
+
+        const remainder: number = totalCharCode % this.length;
+        return this._words[remainder];
+    }
 }
