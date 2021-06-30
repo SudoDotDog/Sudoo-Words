@@ -48,4 +48,31 @@ export class Words {
         this._verbs.push(...verbs);
         return this;
     }
+
+    public getAdjectives(): string[] {
+
+        if (this._parent) {
+            return this._adjectives.concat(this._parent.getAdjectives());
+        }
+
+        return [...this._adjectives];
+    }
+
+    public getNouns(): string[] {
+
+        if (this._parent) {
+            return this._nouns.concat(this._parent.getNouns());
+        }
+
+        return [...this._nouns];
+    }
+
+    public getVerbs(): string[] {
+
+        if (this._parent) {
+            return this._verbs.concat(this._parent.getVerbs());
+        }
+
+        return [...this._verbs];
+    }
 }
